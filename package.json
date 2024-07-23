@@ -1,7 +1,7 @@
 {
   "name": "everest-widget",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -53,5 +53,22 @@
     "webpack": "^5.92.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victor-Laranjeira/everest-widget.git"
+  },
+  "keywords": [
+    "everest",
+    "widget",
+    "chatbot"
+  ],
+  "author": "Victor Laranjeira de Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Victor-Laranjeira/everest-widget/issues"
+  },
+  "homepage": "https://github.com/Victor-Laranjeira/everest-widget#readme"
 }
