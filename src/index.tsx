@@ -11,5 +11,3 @@ root.render(
     <Widget />
   </React.StrictMode>
 );
-
-export default root;
