@@ -63,6 +63,23 @@ const Widget: FunctionComponent = () => {
     setIsChatActive(false)
   }
 
+  const sendHeight = () => {
+    const height = document.body.scrollHeight;
+    const widht = document.body.scrollWidth;
+    console.log(height, widht);
+    window.parent.postMessage({ height, widht }, '*');
+  };
+
+  useEffect(() => {
+    sendHeight(); // Send height on load
+
+    window.addEventListener('resize', sendHeight); // Send height on resize
+
+    return () => {
+      window.removeEventListener('resize', sendHeight);
+    };
+  }, []);
+
   return (
     <>
       <div 
