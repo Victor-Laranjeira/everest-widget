@@ -63,42 +63,42 @@ const Widget: FunctionComponent = () => {
     setIsChatActive(false)
   }
 
-  let currentIFrameHeight = 0;
-  console.log(currentIFrameHeight)
+  // let currentIFrameHeight = 0;
+  // console.log(currentIFrameHeight)
 
-  const handleReceiveMessage = (event: { data: { eventName: any; payload: any } }) => {
-    const eventName = event?.data?.eventName;
-    const payload = event?.data?.payload;
+  // const handleReceiveMessage = (event: { data: { eventName: any; payload: any } }) => {
+  //   const eventName = event?.data?.eventName;
+  //   const payload = event?.data?.payload;
   
-    if (eventName === 'SET_HEIGHT' && payload?.height) {
-      currentIFrameHeight = payload.height;
-    }
-  };
+  //   if (eventName === 'SET_HEIGHT' && payload?.height) {
+  //     currentIFrameHeight = payload.height;
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener('message', handleReceiveMessage);
+  // useEffect(() => {
+  //   window.addEventListener('message', handleReceiveMessage);
 
-    return () => {
-      window.removeEventListener('message', handleReceiveMessage);
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('message', handleReceiveMessage);
+  //   }
+  // }, [])
 
-  const sendHeight = () => {
-    const height = document.body.scrollHeight;
-    const widht = document.body.scrollWidth;
-    console.log(height, widht);
-    window.parent.postMessage({ eventName: 'SET_HEIGHT', payload: { height } }, '*');
-  };
+  // const sendHeight = () => {
+  //   const height = document.body.scrollHeight;
+  //   const widht = document.body.scrollWidth;
+  //   console.log(height, widht);
+  //   window.parent.postMessage({ eventName: 'SET_HEIGHT', payload: { widht } }, '*');
+  // };
 
-  useEffect(() => {
-    sendHeight(); // Send height on load
+  // useEffect(() => {
+  //   sendHeight(); // Send height on load
 
-    window.addEventListener('resize', sendHeight); // Send height on resize
+  //   window.addEventListener('mainDiv', sendHeight); // Send height on resize
 
-    return () => {
-      window.removeEventListener('resize', sendHeight);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('mainDiv', sendHeight);
+  //   };
+  // }, []);
 
   return (
     <>
